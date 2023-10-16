@@ -5,20 +5,20 @@
 class Uctl < Formula
   desc "Uctl is a lightweight command-line interface to work with Unionai Cloud"
   homepage "https://docs.union.ai/"
-  version "0.0.52"
+  version "0.0.64"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/unionai/uctl/releases/download/v0.0.52/uctl_Darwin_arm64.tar.gz"
-      sha256 "723113242c78e3d776029d8903dbb3f4dc13df407f028ed5df25725b0486b7c3"
+    if Hardware::CPU.intel?
+      url "https://github.com/unionai/uctl/releases/download/v0.0.64/uctl_Darwin_x86_64.tar.gz"
+      sha256 "388826dc79d237eb31c8722a5616bcbaf413e0b646797969cdb583c3aecd64c0"
 
       def install
         bin.install "uctl"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/unionai/uctl/releases/download/v0.0.52/uctl_Darwin_x86_64.tar.gz"
-      sha256 "7da8f72f2cb24a93bb59d70978912b1ad0100e0b1960debf70750886aa528887"
+    if Hardware::CPU.arm?
+      url "https://github.com/unionai/uctl/releases/download/v0.0.64/uctl_Darwin_arm64.tar.gz"
+      sha256 "9343183381bbdab2868b0e052abb92699cf011a36feb6fee083cef7c6cea737b"
 
       def install
         bin.install "uctl"
@@ -27,17 +27,17 @@ class Uctl < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/unionai/uctl/releases/download/v0.0.52/uctl_Linux_x86_64.tar.gz"
-      sha256 "84557e6627fa72bbcf05ec13c2aeb6c8003fa956e293c9f49869b56ec4ca585a"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/unionai/uctl/releases/download/v0.0.64/uctl_Linux_arm64.tar.gz"
+      sha256 "1477a141909411a2c4af5d8744f4969cd7a6d40ac297a19b1d4608a1194fda33"
 
       def install
         bin.install "uctl"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/unionai/uctl/releases/download/v0.0.52/uctl_Linux_arm64.tar.gz"
-      sha256 "0d354c95c89cf8072e5f03fd519011d602e9ea2126e30eedff66372f94b99254"
+    if Hardware::CPU.intel?
+      url "https://github.com/unionai/uctl/releases/download/v0.0.64/uctl_Linux_x86_64.tar.gz"
+      sha256 "be7e9f942e384ef6b9fda19a3740b1f7e85cc49ffa3371a0a082f914906158f9"
 
       def install
         bin.install "uctl"
