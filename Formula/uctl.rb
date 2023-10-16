@@ -5,20 +5,20 @@
 class Uctl < Formula
   desc "Uctl is a lightweight command-line interface to work with Unionai Cloud"
   homepage "https://docs.union.ai/"
-  version "0.0.64"
+  version "0.0.65"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/unionai/uctl/releases/download/v0.0.64/uctl_Darwin_x86_64.tar.gz"
-      sha256 "388826dc79d237eb31c8722a5616bcbaf413e0b646797969cdb583c3aecd64c0"
+    if Hardware::CPU.arm?
+      url "https://github.com/unionai/uctl/releases/download/v0.0.65/uctl_Darwin_arm64.tar.gz"
+      sha256 "0ea35ecb332792c80b4ef83e171837566a6c19771e1bc2823436be2b6cf02cbd"
 
       def install
         bin.install "uctl"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/unionai/uctl/releases/download/v0.0.64/uctl_Darwin_arm64.tar.gz"
-      sha256 "9343183381bbdab2868b0e052abb92699cf011a36feb6fee083cef7c6cea737b"
+    if Hardware::CPU.intel?
+      url "https://github.com/unionai/uctl/releases/download/v0.0.65/uctl_Darwin_x86_64.tar.gz"
+      sha256 "8476a7d96c06b595027deec798e99d872e0766de46b8e9889df707ee64a564c5"
 
       def install
         bin.install "uctl"
@@ -28,16 +28,16 @@ class Uctl < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/unionai/uctl/releases/download/v0.0.64/uctl_Linux_arm64.tar.gz"
-      sha256 "1477a141909411a2c4af5d8744f4969cd7a6d40ac297a19b1d4608a1194fda33"
+      url "https://github.com/unionai/uctl/releases/download/v0.0.65/uctl_Linux_arm64.tar.gz"
+      sha256 "02c4a95207be3ba7fb33b21b4efcb0c694021d16d10890b3a52f9d93aad17f7c"
 
       def install
         bin.install "uctl"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/unionai/uctl/releases/download/v0.0.64/uctl_Linux_x86_64.tar.gz"
-      sha256 "be7e9f942e384ef6b9fda19a3740b1f7e85cc49ffa3371a0a082f914906158f9"
+      url "https://github.com/unionai/uctl/releases/download/v0.0.65/uctl_Linux_x86_64.tar.gz"
+      sha256 "3a9b62d90d2a8470b7590e72ee718b3877a57fbb9ba52261be2f5461412795b6"
 
       def install
         bin.install "uctl"
