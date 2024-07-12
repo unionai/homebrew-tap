@@ -5,20 +5,20 @@
 class Uctl < Formula
   desc "Uctl is a lightweight command-line interface to work with Unionai Cloud"
   homepage "https://docs.union.ai/"
-  version "0.1.3"
+  version "0.1.4"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/unionai/uctl/releases/download/v0.1.3/uctl_Darwin_arm64.tar.gz"
-      sha256 "094bf1e71de3e7bad85838333ce99c2119361f70b148a7c278d3f20b92a79910"
+      url "https://github.com/unionai/uctl/releases/download/v0.1.4/uctl_Darwin_arm64.tar.gz"
+      sha256 "6d1a531446520817b677fa44e0a7b18984aeaf58d8bf4e486e248b50bf52f20c"
 
       def install
         bin.install "uctl"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/unionai/uctl/releases/download/v0.1.3/uctl_Darwin_x86_64.tar.gz"
-      sha256 "11ff90f0c1bd6bfc980be3f61bab6d38245224417db60ac19aea84bd449d7f0b"
+      url "https://github.com/unionai/uctl/releases/download/v0.1.4/uctl_Darwin_x86_64.tar.gz"
+      sha256 "7e52ca4ce21faf83746155159eba2285a21cbfb2141f0ffe0ac088263128507b"
 
       def install
         bin.install "uctl"
@@ -28,16 +28,16 @@ class Uctl < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/unionai/uctl/releases/download/v0.1.3/uctl_Linux_arm64.tar.gz"
-      sha256 "260833a1dfff555e5589320c2a719d12056627a4233746d28f4bf9aeecce8d77"
+      url "https://github.com/unionai/uctl/releases/download/v0.1.4/uctl_Linux_arm64.tar.gz"
+      sha256 "7baf24993d8f5afb33717d0481f6460639e81901bcd250dab02f4ac44f708f31"
 
       def install
         bin.install "uctl"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/unionai/uctl/releases/download/v0.1.3/uctl_Linux_x86_64.tar.gz"
-      sha256 "6536cfd8a9dc065813b96b175af7a5cf928134abf84534506580b72ebc6925ab"
+      url "https://github.com/unionai/uctl/releases/download/v0.1.4/uctl_Linux_x86_64.tar.gz"
+      sha256 "91619981e74bf8c728dac948f114b1c5b0f604ae07d35df7481bd55566b6118e"
 
       def install
         bin.install "uctl"
