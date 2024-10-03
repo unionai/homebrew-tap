@@ -5,20 +5,20 @@
 class Uctl < Formula
   desc "Uctl is a lightweight command-line interface to work with Unionai Cloud"
   homepage "https://docs.union.ai/"
-  version "0.1.9"
+  version "0.1.10"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/unionai/uctl/releases/download/v0.1.9/uctl_Darwin_arm64.tar.gz"
-      sha256 "3e78c9c9152de7eb02517aba6cce3509f2b827dad5a096ec42393129f6ad881b"
+      url "https://github.com/unionai/uctl/releases/download/v0.1.10/uctl_Darwin_arm64.tar.gz"
+      sha256 "e624569c883b3a9d6556fdf8bec02bd3d066c4034cd54220d0341ab28f7ac023"
 
       def install
         bin.install "uctl"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/unionai/uctl/releases/download/v0.1.9/uctl_Darwin_x86_64.tar.gz"
-      sha256 "9efa22112b3677e7f9fca34d5cb33f9ea23c3fde302e4bf0c50b87fc0a0afd88"
+      url "https://github.com/unionai/uctl/releases/download/v0.1.10/uctl_Darwin_x86_64.tar.gz"
+      sha256 "631414a998db36c06b85a1bf819f6be881532a7d187130e586a0e4aedce0e006"
 
       def install
         bin.install "uctl"
@@ -28,16 +28,16 @@ class Uctl < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/unionai/uctl/releases/download/v0.1.9/uctl_Linux_arm64.tar.gz"
-      sha256 "a05fcba8bcdb1e5e79f2cdcc40ca7853375afc910a699ffcaaa8c186b16a740b"
+      url "https://github.com/unionai/uctl/releases/download/v0.1.10/uctl_Linux_arm64.tar.gz"
+      sha256 "5048299bebca887fd736ea7e6cb03a8bb7e2b0487a189122e676bd41add5bc59"
 
       def install
         bin.install "uctl"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/unionai/uctl/releases/download/v0.1.9/uctl_Linux_x86_64.tar.gz"
-      sha256 "cc08a77fbb5fc85c1868ed12c6704ae0e4369ef64a4de352f70d299e8e22d1f2"
+      url "https://github.com/unionai/uctl/releases/download/v0.1.10/uctl_Linux_x86_64.tar.gz"
+      sha256 "756b9953a7f847fd975c614433117c9bf40f69087600114916ba59935e88874d"
 
       def install
         bin.install "uctl"
