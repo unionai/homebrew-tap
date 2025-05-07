@@ -5,20 +5,20 @@
 class Uctl < Formula
   desc "Uctl is a lightweight command-line interface to work with Unionai Cloud"
   homepage "https://docs.union.ai/"
-  version "0.1.12"
+  version "0.1.13"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/unionai/uctl/releases/download/v0.1.12/uctl_Darwin_arm64.tar.gz"
-      sha256 "ab8e6d017da55f0dc14af2a3b8e26b70dd1a93239bbf8022ec8e5eeb915d154e"
+      url "https://github.com/unionai/uctl/releases/download/v0.1.13/uctl_Darwin_arm64.tar.gz"
+      sha256 "f91367e81c794501b82d4f4c7f09f473be2ace57154baf9baf9a15eb5dc05990"
 
       def install
         bin.install "uctl"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/unionai/uctl/releases/download/v0.1.12/uctl_Darwin_x86_64.tar.gz"
-      sha256 "b40c2d49345237cf2f4958a11070263dc90e5adea8ea81483be0a8840b7e6438"
+      url "https://github.com/unionai/uctl/releases/download/v0.1.13/uctl_Darwin_x86_64.tar.gz"
+      sha256 "13cca9278585eecffa707d960e6ccfaec78449030a78fbe5e1ced2fba291a660"
 
       def install
         bin.install "uctl"
@@ -28,16 +28,16 @@ class Uctl < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/unionai/uctl/releases/download/v0.1.12/uctl_Linux_arm64.tar.gz"
-      sha256 "7ae4e62040f9f8aec912a0429cd892bd4fa8e83a45832dd6862975d395e23ed1"
+      url "https://github.com/unionai/uctl/releases/download/v0.1.13/uctl_Linux_arm64.tar.gz"
+      sha256 "3a3bdc3b5a10fa8da7a838b7ead6e193f62e11a046bfb37e4d71312ba7440474"
 
       def install
         bin.install "uctl"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/unionai/uctl/releases/download/v0.1.12/uctl_Linux_x86_64.tar.gz"
-      sha256 "56e418919aeaea178d0375fc51c8116518b0ea14b6ae7483485d2239506c0c93"
+      url "https://github.com/unionai/uctl/releases/download/v0.1.13/uctl_Linux_x86_64.tar.gz"
+      sha256 "b781035962999bab5203a82e1786a85b0e08fb6e9c4532c510c94309de39a649"
 
       def install
         bin.install "uctl"
