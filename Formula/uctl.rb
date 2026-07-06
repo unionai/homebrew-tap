@@ -5,41 +5,39 @@
 class Uctl < Formula
   desc "Uctl is a lightweight command-line interface to work with Unionai Cloud"
   homepage "https://docs.union.ai/"
-  version "0.1.20"
+  version "0.1.21"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/unionai/uctl/releases/download/v0.1.20/uctl_Darwin_arm64.tar.gz"
-      sha256 "8a1cda5d6987230a7a295b15d3da85ca31f2dfa96ef96bd21d5a8d67a90c8e1d"
+    if Hardware::CPU.intel?
+      url "https://github.com/unionai/uctl/releases/download/v0.1.21/uctl_Darwin_x86_64.tar.gz"
+      sha256 "3a14f6b85b59f644829c00ae6d408afb4175af9151b143f57ea28ee54691ccf4"
 
-      def install
+      define_method(:install) do
         bin.install "uctl"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/unionai/uctl/releases/download/v0.1.20/uctl_Darwin_x86_64.tar.gz"
-      sha256 "b6c7f774a0b21690cf8340b12298654d66ba623de34d87a81fce71b7dc3d2701"
+    if Hardware::CPU.arm?
+      url "https://github.com/unionai/uctl/releases/download/v0.1.21/uctl_Darwin_arm64.tar.gz"
+      sha256 "6dfa3748a57e2602242c40006634468c5865f765bd19966d092ea1ecf42efe4e"
 
-      def install
+      define_method(:install) do
         bin.install "uctl"
       end
     end
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/unionai/uctl/releases/download/v0.1.20/uctl_Linux_arm64.tar.gz"
-      sha256 "04bc9ff3a7d85c5fe3dfdf956b93e98f8a9d9dd4f127068c80d7078370c37206"
-
-      def install
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/unionai/uctl/releases/download/v0.1.21/uctl_Linux_x86_64.tar.gz"
+      sha256 "98c74baabdaa3cd9c4e7a872a0870fadc87fa583d455095e651e9bc513253b3d"
+      define_method(:install) do
         bin.install "uctl"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/unionai/uctl/releases/download/v0.1.20/uctl_Linux_x86_64.tar.gz"
-      sha256 "6bc5bc36d419bc464fa7827a5d8e820d1d8db79ba00cd365311eb4a4d0839d68"
-
-      def install
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/unionai/uctl/releases/download/v0.1.21/uctl_Linux_arm64.tar.gz"
+      sha256 "2315650ec2d12bfef08cc5734f1e80256bf38b63a0e5477b03a741c59ccf4ae2"
+      define_method(:install) do
         bin.install "uctl"
       end
     end
