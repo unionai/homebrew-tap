@@ -5,20 +5,20 @@
 class Uctl < Formula
   desc "Uctl is a lightweight command-line interface to work with Unionai Cloud"
   homepage "https://docs.union.ai/"
-  version "0.1.23"
+  version "0.1.24"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/unionai/uctl/releases/download/v0.1.23/uctl_Darwin_x86_64.tar.gz"
-      sha256 "a9b7d5b4e02635763c14ad458fbbb41f5a9254e9e8ef434b6c68be75e8a4680d"
+      url "https://github.com/unionai/uctl/releases/download/v0.1.24/uctl_Darwin_x86_64.tar.gz"
+      sha256 "b5946d70b2d7103277012f9a90ec31f7b29e036bcfdcf7c4cb23ff9583a94440"
 
       define_method(:install) do
         bin.install "uctl"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/unionai/uctl/releases/download/v0.1.23/uctl_Darwin_arm64.tar.gz"
-      sha256 "2b2885aa8da37361432ad283ea7c9295091a59bdeb5f923cd40918dd175c62d2"
+      url "https://github.com/unionai/uctl/releases/download/v0.1.24/uctl_Darwin_arm64.tar.gz"
+      sha256 "b80290b6841d4f0ba116871269d5118dd582c43ae8140e4baa7a1c805fb7ea5e"
 
       define_method(:install) do
         bin.install "uctl"
@@ -28,15 +28,15 @@ class Uctl < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/unionai/uctl/releases/download/v0.1.23/uctl_Linux_x86_64.tar.gz"
-      sha256 "a2653810cc30a784f532fd3fe360364a392b5e3ccf64947151a79c6e8caeaa30"
+      url "https://github.com/unionai/uctl/releases/download/v0.1.24/uctl_Linux_x86_64.tar.gz"
+      sha256 "9e351ac9ed008ab8bf5097544b880f27c24eecc54257a02e078c46694420388a"
       define_method(:install) do
         bin.install "uctl"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/unionai/uctl/releases/download/v0.1.23/uctl_Linux_arm64.tar.gz"
-      sha256 "058e5b93ef8d07ca4cf538223f035fcc55284e61cee6977800035d63a23e946f"
+      url "https://github.com/unionai/uctl/releases/download/v0.1.24/uctl_Linux_arm64.tar.gz"
+      sha256 "d2f7b3e3cb33ec306acfa04e24f1d7528297fd4e5127ac36db2782eccc11df30"
       define_method(:install) do
         bin.install "uctl"
       end
